@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<title>緯度経度表示 - egmapjs</title>
+<meta name="viewport" content="width=device-width"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+<link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
+<script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
+<script src="https://fukuno.jig.jp/fukuno.js"></script>
+<script>"use strict"
+
+window.onload = function() {
+	var map = initMap('mapid')
+	map.setZoom(8)
+	map.panTo([ 35.944571, 136.186228 ]) // Hana道場
+
+	// センタークロス追加
+	const iconcenter = L.icon({
+		iconUrl: 'crosshairs.png',
+		iconRetinaUrl: 'crosshairs.png',
+		iconSize: [ 35, 35 ],
+		iconAnchor: [ 17, 17 ],
+	})
+	const crosshair = new L.marker(map.getCenter(), { icon: iconcenter, clickable: false })
+	crosshair.addTo(map);
+	map.on('move', function() {
+		crosshair.setLatLng(map.getCenter());
+	})
+
+	var showLL = function() {
+		var ll = map.getCenter()
+		const sep = chktab.checked ? "\t" : ","
+		tfll.value = fixfloat(ll.lat, 6) + sep + fixfloat(ll.lng, 6)
+	}
+	showLL()
+	map.on("move", showLL)
+	chktab.onchange = showLL
+}
+</script>
+<style>
+body {
+	margin: 0;
+	font-family: sans-serif;
+	text-align: center;
+	background: white;
+}
+a {
+	color: gray !important;
+}
+h1 {
+	font-size: 3.5vh;
+	margin: 0.5vh;
+}
+#sub {
+	font-size: 4vw;
+}
+#mapid {
+	height: 75vh;
+}
+#tfll {
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 120%;
+	width: 85%;
+	border: 1px solid gray;
+}
+#tfllbox {
+	text-align: left;
+}
+#spantab {
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 2vw;
+	width: 15%;
+	padding: 0px 0.4vw;
+	x-border: 1px solid gray;
+}
+.credit {
+	margin-top: 1vh;
+	font-size: 90%;
+}
+#debug {
+	text-align: left;
+}
+</style>
+
+</Head>
+<body>
+<h1>緯度経度表示 - egmapjs</h1>
+<div id="mapid"></div>
+<div id=tfllbox><input type=text id="tfll"><label id=spantab><input type=checkbox id=chktab>タブ</label></div>
+
+<div class=credit>
+App: <a href=https://fukuno.jig.jp/2369>緯度経度地図</a> CC BY fukuno.jig.jp<br>
+Lib: <a href=https://fukuno.jig.jp/2363>egmapjs</a> CC BY fukuno.jig.jp (<a href=https://github.com/code4fukui/egmapjs>src on GitHub</a>)<br>
+</div>
+
+</body>
+</html>
