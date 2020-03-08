@@ -15,11 +15,11 @@
 window.onload = function() {
 	var map = initMap('mapid')
 	map.setZoom(16)
-	map.panTo([ 35.943560,136.188917 ]) // 鯖江駅
+	map.panTo([ 35.986178,136.171532 ]) //  福正寺
 	// スラッシュ2つ続けると「コメント」になる、後ろの行は何を書いてもプログラムに影響なし
 	
 	// ピンを追加
-	map.addIcon(35.943560,136.188917, "鯖江駅")
+//	map.addIcon(35.986178,136.171532, "鯖江駅")
 	
 	map.addIcon(35.983069,136.173812, "1 近松門左衛門記念碑公園（トイレ）")
 	map.addIcon(35.982466,136.170116, "2 西光寺表門")
@@ -32,7 +32,7 @@ window.onload = function() {
 	map.addIcon(35.989286,136.177752, "9 榎お清水")
 	
 	// アイコンを追加
-	map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 16)
+	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 16)
 
 	// タップしたところの緯度経度を表示
 	map.on("click", (e) => alert(e.latlng))
