@@ -47,11 +47,8 @@ window.onload = function() {
 }
 
 //
-    L.marker([35.989468,136.172487]).bindPopup('5 吉江藩館跡').addTo(map);
-    L.marker([35.988482,136.174284]).bindPopup('6 近松門左衛門座像').addTo(map);
-    L.marker([35.992239,136.175585]).bindPopup('7 大谷公園（トイレ）').addTo(map);
-    L.marker([35.989859,136.176626]).bindPopup('8 春慶寺（トイレ）').addTo(map);
-    L.marker([35.989286,136.177752]).bindPopup('9 榎お清水').addTo(map);
+    map.addIcon(35.989468,136.172487 , "5 吉江藩館跡", "icon/hanadoj.png", 64)
+
    
 //線の追加(線の色、太さを指定)、面と線の描画順に注意する
 L.polyline([
