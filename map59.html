@@ -5,6 +5,7 @@
 <link rel="apple-touch-icon" href="app-icon.png"/>
 <meta property="og:image" content="ogp-image.jpg"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+	
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
 <link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
@@ -29,7 +30,7 @@ window.onload = function() {
 	map.addIcon(35.950969, 136.184603, "6 東山　庭園")
 	map.addIcon(35.950674, 136.182066, "7 予備　")	
 	
-　　var marker = L.marker([35.950596, 136.182291).addTo(map);
+　　var marker = L.marker([35.950596, 136.182291]).addTo(map);
     //上のマーカーにポップアップを追加する。
     marker.bindPopup("1 中央広場").openPopup();
 	
