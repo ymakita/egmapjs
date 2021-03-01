@@ -35,10 +35,21 @@ window.onload = function() {
     marker.bindPopup("1 中央広場").openPopup();
 	
 var ht1=2 ;
+var ht2=1;
+	
+	
  if (ht1=2) {
 　　var circle = L.circle([35.950596, 136.182291], {
         color: 'red',
         fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 20
+    }).addTo(map);}
+
+if (ht2=1) {
+　　var circle = L.circle([35.949945, 136.182173], {
+        color: 'brue',
+        fillColor: '#00ffff',
         fillOpacity: 0.5,
         radius: 20
     }).addTo(map);}
