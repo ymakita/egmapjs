@@ -34,6 +34,14 @@ window.onload = function() {
     //上のマーカーにポップアップを追加する。
     marker.bindPopup("1 中央広場").openPopup();
 	
+	
+　　var circle = L.circle([35.950596, 136.182291], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(map);
+	
 	// アイコンを追加
 	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 32)
 
