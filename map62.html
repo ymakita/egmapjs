@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/>
+
+<title>マップアプリ61</title>
+<link rel="apple-touch-icon" href="app-icon.png"/>
+<meta property="og:image" content="ogp-image.jpg"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+	
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
+<link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
+<script src="https://fukuno.jig.jp/fukuno.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
+<script>"use strict"
+
+window.onload = function() {
+	var map = initMap('mapid')
+	map.setZoom(18)
+	map.panTo([ 35.950657, 136.18309 ]) //  西山公園　入口
+	// スラッシュ2つ続けると「コメント」になる、後ろの行は何を書いてもプログラムに影響なし
+	
+	// ピンを追加
+//	map.addIcon(35.986178,136.171532, "鯖江駅")
+	
+//	map.addIcon(35.950596, 136.182291, "1 中央広場","icon/hanadojo.png", 32)
+	map.addIcon(35.949945, 136.182173, "2 噴水前")
+	map.addIcon(35.950783, 136.180902, "3 西山動物園")
+	map.addIcon(35.951174, 136.180859, "4  西山動物園2")
+	map.addIcon(35.950735, 136.184056, "5 東山　お茶席")
+	map.addIcon(35.950969, 136.184603, "6 東山　庭園")
+	map.addIcon(35.950674, 136.182066, "7 予備　")	
+	
+　　var marker = L.marker([35.950596, 136.182291]).addTo(map);
+    //上のマーカーにポップアップを追加する。
+    marker.bindPopup("1 中央広場").openPopup();
+	
+	
+　　var circle = L.circle([35.950596, 136.182291], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 20
+    }).addTo(map);
+	
+	// アイコンを追加
+	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 32)
+
+	// タップしたところの緯度経度を表示
+	map.on("click", (e) => alert(e.latlng))
+
+	// 線分を地図上に表示する
+	map.addLayer(L.polyline([
+
+[35.98384476509417,136.17333769798282],
+[35.98334123135571,136.17317676544192,]
+	], { color: 'red' }))
+
+}
+/*--	// 領域を地図上に表示する
+	map.addLayer(L.polygon([
+	   [35.983085122445644,136.17352008819583],
+[35.98323271073259,136.17313385009768],
+[35.98276824077929,136.17291390895846],
+[35.98236454037485,136.17268323898318],
+[35.98227772281374,136.17260277271274],
+[35.98277258163264,136.17157280445102],
+[35.98246872132211,136.17137968540194],
+[35.98237322212571,136.1713153123856,]
+	], { color: 'green' }))
+}
+--*/
+
+	
+
+</script>
+<style>
+
+body { margin: 0; font-family: sans-serif; text-align: center; }
+h1 { font-size: 5vw; margin: 0; }
+#mapid { height: 60vh; }
+
+</style></head><body>
+
+<h1>西山公園　混雑状況</h1>
+<div id="mapid"></div>
+<p>
+	
+</P>
+<img id=qrcode><script>addEventListener("load", () => qrcode.src = "http://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
+
+<a href=https://fukuno.jig.jp/2393>簡単地図アプリ egmapjs チュートリアル</a>
+
+</body></html>
