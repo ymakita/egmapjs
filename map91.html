@@ -132,6 +132,16 @@ if (ht10=1) {
         radius: 20
     }).addTo(map);}
 
+//消す
+var marker = L.marker([ latitude, longitude ] {
+    icon : icon
+}).addTo(map);
+
+function onMapMoved() {
+    map.removeLayer(marker);
+}
+
+map.on('move', onMapMoved);
 	
 	
 	// アイコンを追加
