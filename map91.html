@@ -43,8 +43,8 @@ window.onload = function() {
   //  marker.bindPopup("1 中央広場").openPopup();
 
 // 混雑を規定、1　密　2　中間　　0　
-var ht1=9;
-var ht2=5;
+var ht1=2
+var ht2=2;
 	
 var ht3=1;var ht4=1;
 	
@@ -132,17 +132,7 @@ if (ht10=1) {
         radius: 20
     }).addTo(map);}
 
-//消す
-//var marker = L.marker([ latitude, longitude ] {
-//    icon : icon
-//}).addTo(map);
 
-function onMapMoved() {
-    map.removeLayer(marker);
-}
-
-map.on('move', onMapMoved);
-	
 	
 	// アイコンを追加
 	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 32)
