@@ -12,6 +12,15 @@
 <script src="https://fukuno.jig.jp/fukuno.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
 <script>"use strict"
+	
+// 混雑を規定、0　空　5　少し密　　9　密　
+	var ht0=2;var ht2=2;
+	var ht3=1;var ht4=1;
+	var ht5=1;var ht6=1;
+	var ht7=1;var ht8=1;
+	var ht9=1;var ht10=1;
+	var kc0="red";
+	
 
 window.onload = function() {
 	var map = initMap('mapid')
@@ -22,119 +31,33 @@ window.onload = function() {
 	// ピンを追加
 //	map.addIcon(35.986178,136.171532, "鯖江駅")
 	
-	map.addIcon(35.950596, 136.182291, "1 中央広場")
-	map.addIcon(35.950622, 136.181958, "2 中央広場西")
-	
-	map.addIcon(35.949945, 136.182173, "3 噴水前")
-	map.addIcon(35.949913, 136.182463, "4 噴水前東")
-	
-	map.addIcon(35.949474, 136.181717, "5 南広場")
-	map.addIcon(35.949748, 136.181883, "6 南広場2")
-	
-	map.addIcon(35.950783, 136.180902, "7 西山動物園")
-	map.addIcon(35.951174, 136.180859, "8  西山動物園2")
-	
-	map.addIcon(35.950735, 136.184056, "9 東山　お茶席")
-	map.addIcon(35.950969, 136.184603, "10 東山　庭園")
+	map.addIcon(35.950596, 136.182291, "0 中央広場")
+	map.addIcon(35.950622, 136.181958, "1 中央広場西")
+	map.addIcon(35.949945, 136.182173, "2 噴水前")
+	map.addIcon(35.949913, 136.182463, "3 噴水前東")
+	map.addIcon(35.949474, 136.181717, "4 南広場")
+	map.addIcon(35.949748, 136.181883, "5 南広場2")
+	map.addIcon(35.950783, 136.180902, "6 西山動物園")
+	map.addIcon(35.951174, 136.180859, "7  西山動物園2")
+	map.addIcon(35.950735, 136.184056, "8 東山　お茶席")
+	map.addIcon(35.950969, 136.184603, "9 東山　庭園")
 	
 	
 　//　var marker = L.marker([35.950596, 136.182291]).addTo(map);
     //上のマーカーにポップアップを追加する。
   //  marker.bindPopup("1 中央広場").openPopup();
 
-// 混雑を規定、1　密　2　中間　　0　
-var ht1=2;var ht2=2;
-var ht3=1;var ht4=1;
-var ht5=1;var ht6=1;
-var ht7=1;var ht8=1;
-var ht9=1;var ht10=1;
-	
- if (ht1=1) {
-　　var circle = L.circle([35.950596, 136.182291], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-	else  {
-　　var circle = L.circle([35.950596, 136.182291], {
-        color: 'blue',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
 
-if (ht2=1) {
-　　var circle = L.circle([35.950622, 136.181958], {
-        color: 'red',
-        fillColor: '#00ffff',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-	
-if (ht3=1) {
-　　var circle = L.circle([35.949945, 136.182173], {
-  	color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht4=1) {
-　　var circle = L.circle([35.949913, 136.182463], {
- 	color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-	
-if (ht5=1) {
-　　var circle = L.circle([35.949474, 136.181717], {
-	 color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht6=1) {
-　　var circle = L.circle([35.949748, 136.181883], {
-        color: 'brue',
-        fillColor: '#00ffff',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht7=1) {
-　　var circle = L.circle([35.950783, 136.180902], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht8=1) {
-　　var circle = L.circle([35.951174, 136.180859], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht9=1) {
-　　var circle = L.circle([35.950735, 136.184056], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
-
-if (ht10=1) {
-　　var circle = L.circle([35.950969, 136.184603], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 20
-    }).addTo(map);}
+　var circle = L.circle([35.950596, 136.182291], {color: kc0,fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.950622, 136.181958], {color: 'red',fillColor: '#00ffff',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.949945, 136.182173], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.949913, 136.182463], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+  var circle = L.circle([35.949474, 136.181717], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.949748, 136.181883], {color: 'brue',fillColor: '#00ffff',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.950783, 136.180902], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.951174, 136.180859], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.950735, 136.184056], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
+　var circle = L.circle([35.950969, 136.184603], {color: 'red',fillColor: '#f03',fillOpacity: 0.5,radius: 20}).addTo(map);
 
 
 	
