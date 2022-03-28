@@ -9,3 +9,7 @@ https://code4fukui.github.io/egmapjs/tutorial.html
 ブログ、簡単で無料で活用できる地図API、leafletjs x 地理院地図  
 https://fukuno.jig.jp/2393  
 
+
+西山公園密状況
+https://ymakita.github.io/egmapjs/map62.html
+
