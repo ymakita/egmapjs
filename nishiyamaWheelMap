@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"/>
 
-<title>三床山</title>
+<title>西山公園　おもてなし車いすルート</title>
 <link rel="apple-touch-icon" href="app-icon.png"/>
 <meta property="og:image" content="ogp-image.jpg"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
@@ -19,11 +19,10 @@ window.onload = function() {
 	// スラッシュ2つ続けると「コメント」になる、後ろの行は何を書いてもプログラムに影響なし
 	
 	// ピンを追加
-　　　　map.addIcon(35.948763,136.129574, "三床山頂上、展望台")
-	
-//	map.addIcon(35.956011,136.238837, "1 弁財天古墳群")
-//	map.addIcon(35.955334,136.238944, "2 カカル丸城跡")
-	
+　　　　map.addIcon(35.9502768,136.1807979, "西山公園")
+	　map.addIcon(35.9487297,136.1804535, "西山動物園")	
+	map.addIcon(35.9500113,136.1799317, "道の駅　西山公園")	
+
 	// アイコンを追加
 	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 16)
 
