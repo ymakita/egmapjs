@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/>
+
+<title>西山公園　おもてなし車いすルート</title>
+<link rel="apple-touch-icon" href="app-icon.png"/>
+<meta property="og:image" content="ogp-image.jpg"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
+<link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
+<script src="https://fukuno.jig.jp/fukuno.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
+<script>"use strict"
+
+window.onload = function() {
+	var map = initMap('mapid')
+	map.setZoom(15)
+	map.panTo([ 35.943008,136.134123 ]) // 三床山
+	// スラッシュ2つ続けると「コメント」になる、後ろの行は何を書いてもプログラムに影響なし
+	
+	// ピンを追加
+　　　　map.addIcon(35.9502768,136.1807979, "西山公園")
+	　map.addIcon(35.9487297,136.1804535, "西山動物園")	
+	map.addIcon(35.9500113,136.1799317, "道の駅　西山公園")	
+
+	// アイコンを追加
+	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon/hanadojo.png", 16)
+
+	// タップしたところの緯度経度を表示
+	map.on("click", (e) => alert(e.latlng))
+
+	// 線分を地図上に表示する
+	map.addLayer(L.polyline([
+[136.1848801,35.9506123],
+[136.1850195,35.9508902],
+[136.1850946,35.9511508],
+[136.185159,35.9514027],
+[136.1851912,35.9516198],
+[136.1851161,35.9517153],
+[136.1849874,35.9517414],
+[136.1847728,35.9516719],
+[136.1847191,35.9515156],
+[136.1847728,35.9513419],
+[136.1848224,35.9511975],
+[136.1848365,35.9510938],
+[136.1847684,35.951004],
+[136.18467,35.9509504],
+[136.1846038,35.9509532]
+
+], { color: 'red' }))
+
+}
+/*--	// 領域を地図上に表示する
+	map.addLayer(L.polygon([
+	   [35.983085122445644,136.17352008819583],
+[35.98323271073259,136.17313385009768],
+[35.98276824077929,136.17291390895846],
+[35.98236454037485,136.17268323898318],
+[35.98227772281374,136.17260277271274],
+[35.98277258163264,136.17157280445102],
+[35.98246872132211,136.17137968540194],
+[35.98237322212571,136.1713153123856,]
+	], { color: 'green' }))
+}
+--*/
+</script>
+<style>
+
+body { margin: 0; font-family: sans-serif; text-align: center; }
+h1 { font-size: 5vw; margin: 0; }
+#mapid { height: 60vh; }
+
+</style></head><body>
+
+<h1>西山公園　おもてなし車いすルート</h1>
+<div id="mapid"></div>
+
+<img id=qrcode><script>addEventListener("load", () => qrcode.src = "http://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
+
+<a href=https://fukuno.jig.jp/2393>簡単地図アプリ egmapjs チュートリアル</a>
+
+</body></html>
