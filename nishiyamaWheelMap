@@ -72,16 +72,8 @@ h1 { font-size: 5vw; margin: 0; }
 
 </style></head><body>
 
-<h1>三床山　散策マップ</h1>
+<h1>西山公園　おもてなし車いすルート</h1>
 <div id="mapid"></div>
-<p>公共交通
-9:06(嚮陽会館) バス豊線第2便 →　9:23　　石生谷
-
-徒歩80分　　山頂　30分
-
-徒歩　60分　下山
-
-12:44（石生谷）バス豊線第3便　→　13:07嚮陽会館
 
 <img id=qrcode><script>addEventListener("load", () => qrcode.src = "http://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
 
